@@ -57,7 +57,7 @@ if __name__ == '__main__':
 
     # Initialize optical flow model
     raft_model = torch.nn.DataParallel(RAFT(args), device_ids=args.device_ids)
-    raft_model.load_state_dict(torch.load(args.raft_model))
+    raft_model.load_state_dict(torch.load(args.raft_model, map_location=torch.device('cpu')))
     raft_model.module.to(f"cuda:{args.device_ids[0]}")
     raft_model.eval()
 
