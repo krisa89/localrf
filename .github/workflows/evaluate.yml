@@ -13,6 +13,7 @@ jobs:
       - name: Configure dependencies
         run: |
           conda create -n localrf python=3.8 -y
+          conda init bash
           conda activate localrf
           pip install torch torchvision # Replace here with the command from https://pytorch.org/ corresponding to your compute platform
           pip install tqdm scikit-image opencv-python configargparse lpips imageio-ffmpeg kornia lpips tensorboard imageio easydict matplotlib scipy==1.6.1 plyfile joblib timm
