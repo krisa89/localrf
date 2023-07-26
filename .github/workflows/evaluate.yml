@@ -25,3 +25,4 @@ jobs:
         run: |
           python scripts/run_flow.py --data_dir data/indoor
           python DPT/run_monodepth.py --input_path data/indoor/images --output_path data/indoor/depth --model_type dpt_large
+          
